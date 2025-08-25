@@ -1,0 +1,11 @@
+h1, h2, h3, h4, h5, h6, button, a {
+    font-family:"Marcellus";
+}
+
+.full-content img {
+  max-width: 400px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}

@@ -1,0 +1,44 @@
+.privacy-container {
+  background-color: #000; /* black background */
+  color: #fff; /* white text */
+  padding: 30px;
+  line-height: 1.6;
+}
+
+.title {
+  color: #c4ef17; /* neon green */
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  color: #c4ef17; /* neon green headings */
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.sub-title {
+  color: #c4ef17; /* neon green subheadings */
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+a {
+  color: #fff; /* white links */
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+a:hover, a:active {
+  color: #fff; /* hover/active remains white */
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}

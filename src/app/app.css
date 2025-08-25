@@ -1,0 +1,11 @@
+.h123{
+    color: aliceblue;
+    background-color: black;
+    height: 100%;
+    font-family:"Outfit";
+}
+
+main{
+    padding-right: 10px;
+    padding-left: 10px;
+}

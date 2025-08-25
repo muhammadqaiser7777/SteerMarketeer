@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* ---- base ---- */
+.faq-section {
+  --scale: 1.3;                 /* global up-scale */
+  --bg: #000;
+  --text: #fff;
+  --muted: #9fa4a8;             /* soft gray like the site */
+  --rule: #2a2a2a;              /* divider line */
+  background: var(--bg);
+  color: var(--text);
+  padding: calc(4rem * var(--scale)) calc(2rem * var(--scale));
+  font-family: 'Outfit', sans-serif;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: calc(4rem * var(--scale)) calc(2rem * var(--scale));
+
+}
+
+/* ---- hero title + breadcrumb (centered) ---- */
+.faq-hero {
+  text-align: center;
+  margin-bottom: calc(3.5rem * var(--scale));
+}
+
+.faq-hero h1 {
+  font-family: 'Marcellus', serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0 0 calc(0.75rem * var(--scale));
+  font-size: clamp(2.8rem, 9vw, calc(5rem * var(--scale)));
+}
+
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(0.75rem * var(--scale));
+  font-size: calc(0.95rem * var(--scale));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.breadcrumb .sep {
+  opacity: 0.7;
+}
+
+/* ---- headline (big left-aligned statement) ---- */
+.faq-header {
+    margin: 0 0 calc(3rem * var(--scale));
+  max-width: 100%;   /* remove 1200px limit */
+  width: 100%;
+}
+
+.faq-header h2 {
+  font-family: 'Marcellus', serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 1.12;
+  margin: 0;
+  /* ~1.3× of previous 2.5rem -> 3.25rem, plus responsive clamp */
+  font-size: clamp(2.6rem, 6vw, calc(3.25rem * var(--scale)));
+}
+
+.faq-header h2 span {
+  color: var(--muted);
+}
+
+/* ---- list ---- */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.75rem * var(--scale));
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--rule);
+  padding: calc(1.1rem * var(--scale)) 0;
+}
+
+.faq-question {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: calc(1.25rem * var(--scale));
+  cursor: pointer;
+}
+
+.faq-number {
+  font-family: 'Marcellus', serif;
+  font-size: calc(1.56rem * var(--scale)); /* 1.2rem -> 1.56rem, then scaled */
+  opacity: 0.95;
+  min-width: 3ch;
+}
+
+.faq-title {
+  font-family: 'Marcellus', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  font-size: calc(1.43rem * var(--scale)); /* 1.1rem -> 1.43rem, then scaled */
+}
+
+.faq-toggle {
+  font-size: calc(1.95rem * var(--scale)); /* 1.5rem -> 1.95rem, then scaled */
+  line-height: 1;
+  user-select: none;
+}
+
+/* ---- answer ---- */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.42s ease, padding 0.42s ease, opacity 0.42s ease;
+  padding: 0 calc(2rem * var(--scale));
+  opacity: 0;
+  color: var(--muted);
+}
+
+.faq-answer.show {
+  max-height: 500px;
+  padding: calc(0.9rem * var(--scale)) calc(2rem * var(--scale));
+  opacity: 1;
+}
+
+.faq-answer p {
+  margin: 0;
+  font-size: calc(1.25rem * var(--scale));
+  line-height: 1.6;
+}
+
+/* ---- small screens ---- */
+@media (max-width: 640px) {
+  .faq-question {
+    grid-template-columns: auto 1fr auto;
+    gap: calc(0.9rem * var(--scale));
+  }
+  .faq-header h2 { text-align: left; }
+}
+
+
+.faq-toggle {
+  width: calc(1.8rem * var(--scale));
+  height: calc(1.8rem * var(--scale));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* whole icon spins */
+.faq-toggle svg {
+  stroke: var(--text);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-toggle.open svg {
+  transform: rotate(180deg);
+}
+
+/* vertical line disappears mid-spin */
+.line-vertical {
+  opacity: 1;
+  transform: scaleY(1);
+  transform-origin: center;
+  transition: opacity 0.35s ease 0.15s, transform 0.35s ease 0.15s;
+}
+
+.faq-toggle.open .line-vertical {
+  opacity: 0;
+  transform: scaleY(0);
+}

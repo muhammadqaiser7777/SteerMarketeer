@@ -1,0 +1,200 @@
+/* =========================
+   NAVBAR BASE
+   ========================= */
+.custom-navbar {
+  background-color: #0a0a0a !important; /* black */
+  padding: 1.05rem 0; /* balanced for zoomed-in items without making navbar taller */
+}
+
+/* Flex container */
+.navbar-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* =========================
+   LEFT: LOGO
+   ========================= */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 100px;          /* slightly bigger */
+  max-width: 240px;
+  object-fit: cover;
+  transform: scale(1.2);  /* “zoomed-in” feel without increasing the box */
+}
+
+/* =========================
+   CENTER: NAV LINKS (INSIDE .collapse)
+   IMPORTANT: do NOT set display here—let .collapse control visibility
+   ========================= */
+.navbar-center {
+  flex: 2;
+  justify-content: center; /* centering when expanded (Bootstrap sets display on lg+) */
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav-item {
+  transform: scale(1.2); /* slightly larger items */
+}
+
+.custom-navbar .nav-link {
+  color: #ffffff !important;
+  font-size: 1.2rem;   /* bigger text */
+  font-weight: 600;
+  margin-left: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: #c4ef17 !important; /* neon green */
+}
+
+/* Neon underline effect */
+.custom-navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;  /* a touch lower to fit bigger text */
+  left: 0;
+  width: 0;
+  height: 3px;   /* thicker underline */
+  background-color: #c4ef17;
+  transition: width 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover::after,
+.custom-navbar .nav-link.active::after {
+  width: 100%;
+}
+
+/* =========================
+   RIGHT: GET IN TOUCH BUTTON
+   ========================= */
+.btn-get-in-touch {
+  color: #c4ef17;
+  border: 2.5px solid #c4ef17;
+  border-radius: 6px;
+  padding: 0.55rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  margin-left: 40px;
+}
+
+.btn-get-in-touch:hover {
+  background-color: #c4ef17;
+  color: #0a0a0a;
+}
+
+/* =========================
+   CUSTOM HAMBURGER TOGGLER
+   ========================= */
+.navbar-toggler {
+  border: none;
+  background: none;
+  padding: 0.5rem; /* larger tap area */
+  z-index: 1001;   /* keep above collapse content when open */
+}
+
+/* We’re using the .navbar-toggler-icon element as our custom container.
+   Remove Bootstrap’s default background-image so our bars are visible. */
+.custom-navbar .navbar-toggler-icon {
+  background-image: none;
+}
+
+.custom-toggler {
+  display: inline-block;
+  width: 28px;
+  height: 22px;
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-toggler .bar {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #fff; /* white bars */
+  border-radius: 2px;
+  transition: all 0.4s ease-in-out;
+}
+
+.custom-toggler .top { top: 0; }
+.custom-toggler .middle { top: 50%; transform: translateY(-50%); }
+.custom-toggler .bottom { bottom: 0; }
+
+/* Animate bars into X
+   Use general sibling (~) because .navbar-right sits between collapse and button */
+.navbar-collapse.show ~ .navbar-toggler .custom-toggler .top {
+  transform: rotate(45deg);
+  top: 50%;
+}
+.navbar-collapse.show ~ .navbar-toggler .custom-toggler .middle {
+  opacity: 0;
+}
+.navbar-collapse.show ~ .navbar-toggler .custom-toggler .bottom {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+/* Glow effect on hover */
+.custom-toggler:hover .bar {
+  box-shadow: 0 0 4px #c4ef17, 0 0 8px #c4ef17;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 992px) {
+  .navbar-flex {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  /* Put the collapsed menu full width under the row */
+  .navbar-center {
+    order: 3;        /* place links below logo/right/toggler */
+    width: 100%;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 1.2rem;     /* comfortable spacing on mobile */
+    align-items: center;
+  }
+
+  .custom-navbar .nav-link {
+    font-size: 1.3rem; /* slightly larger for mobile readability */
+  }
+}
+
+/* Optional: larger screens can get a tiny spacing boost without affecting height */
+@media (min-width: 1200px) {
+  .custom-navbar {
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+  }
+}
+
+

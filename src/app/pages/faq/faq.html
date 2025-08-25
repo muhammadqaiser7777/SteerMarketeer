@@ -1,0 +1,40 @@
+<section class="faq-section">
+  <!-- Page title + breadcrumb (centered) -->
+  <div class="faq-hero">
+    <h1>FAQ</h1>
+    <nav class="breadcrumb">
+      <a href="javascript:void(0)">STEERMARKETEER</a>
+      <span class="sep">></span>
+      <span>FAQ</span>
+    </nav>
+  </div>
+
+  <!-- Big left-aligned statement -->
+  <div class="faq-header">
+    <h2>
+      THE ANSWERS YOU SEEK. <br />
+      ARE WITHIN OUR <span>FREQUENTLY ASKED QUESTIONS.</span>
+    </h2>
+  </div>
+
+  <!-- Accordion -->
+  <div class="faq-container">
+    <div class="faq-item" *ngFor="let item of faqs; let i = index">
+      <div class="faq-question" (click)="toggleFAQ(i)">
+        <div class="faq-number">{{ (i + 1) | number:'2.0' }}</div>
+        <div class="faq-title">{{ item.question }}</div>
+<div class="faq-toggle" [class.open]="item.open">
+  <svg viewBox="0 0 24 24" class="icon-plus">
+    <line class="line-horizontal" x1="5" y1="12" x2="19" y2="12" />
+    <line class="line-vertical" x1="12" y1="5" x2="12" y2="19" />
+  </svg>
+</div>
+
+
+      </div>
+      <div class="faq-answer" [class.show]="item.open">
+        <p>{{ item.answer }}</p>
+      </div>
+    </div>
+  </div>
+</section>
