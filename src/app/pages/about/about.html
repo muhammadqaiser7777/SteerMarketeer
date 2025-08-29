@@ -1,1 +1,92 @@
-<p>about works!</p>
+<div class="about-page">
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <span>SteerMarketeer > About</span>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>About Steer Marketeer</h1>
+    <h2>Steering Performance Marketing<br>to Success</h2>
+    <p>
+      At Steer Marketeer, we’re not just another advertising network—we’re your growth partners in the
+      digital marketing landscape. Our mission is to connect advertisers and affiliates with high-quality
+      leads through data-driven strategies, cutting-edge technology, and performance-based marketing.
+    </p>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="experience">
+    <div class="counter-box">
+      <h1>{{ yearsExperience }}</h1>
+      <p>Years of<br>Collective Experience</p>
+    </div>
+    <p>
+      We believe in precision marketing—delivering the right audience to the right businesses at the right
+      time. Our innovative approach, transparency, and commitment to results set us apart, ensuring that
+      every campaign we run maximizes conversions and ROI for our partners.
+    </p>
+    <p>
+      From lead generation to real-time delivery, we streamline the entire process so you can focus on
+      closing deals and scaling your business. Whether you’re an advertiser looking for premium leads or an
+      affiliate seeking profitable opportunities, we provide the tools, expertise, and support to help you
+      succeed.
+    </p>
+    <p>
+      At Steer Marketeer, we don’t just generate leads—we steer businesses toward growth, one conversion at a time.
+    </p>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stat-card">
+      <h2>{{ publishers | number }}+</h2>
+      <p>Satisfied Publishers</p>
+    </div>
+    <div class="stat-card">
+      <h2>{{ advertisers | number }}+</h2>
+      <p>Satisfied Advertisers</p>
+    </div>
+    <div class="stat-card">
+      <h2>{{ conversionRate }}%</h2>
+      <p>Average Conversion Rate</p>
+    </div>
+    <div class="stat-card">
+      <h2>{{ guaranteed }}%</h2>
+      <p>Guaranteed Results</p>
+    </div>
+  </section>
+
+  <!-- Why Us Section -->
+  <section class="why-us">
+    <h2>WHY US</h2>
+    <h3>Powering Performance, Maximizing Growth</h3>
+    <p>
+      At Steer Marketeer, we drive success with data-driven strategies, trusted partnerships, and
+      performance-focused marketing. Our expertise in lead generation ensures advertisers receive
+      high-quality, high-converting leads, maximizing ROI and business growth.
+    </p>
+    <ul>
+      <li>Precision-Targeted Leads</li>
+      <li>Performance-Driven Results</li>
+      <li>Trusted Affiliate Network</li>
+    </ul>
+  </section>
+
+  <!-- Working Section -->
+  <section class="working">
+    <h2>Our Working</h2>
+    <h3>How we deliver Quality</h3>
+        <div class="carousal"><app-carousal 
+  [cards]="[
+    { img: 'assets/images/advertisers/advertiser-1.jpg', title: 'Business Strategy', desc: 'We help businesses grow with targeted campaigns.' },
+    { img: 'assets/images/advertisers/advertiser-2.jpg', title: 'Creative Design', desc: 'Engaging visuals that attract and retain audiences.' },
+    { img: 'assets/images/advertisers/advertiser-3.jpg', title: 'Digital Marketing', desc: 'Maximize ROI with powerful digital strategies.' },
+    { img: 'assets/images/advertisers/advertiser-4.jpg', title: 'Social Media Growth', desc: 'Build and engage communities across social platforms.' },
+    { img: 'assets/images/advertisers/advertiser-5.jpg', title: 'Brand Development', desc: 'Strong brand identities that stand out in the market.' },
+    { img: 'assets/images/advertisers/advertiser-6.jpg', title: 'Analytics & Insights', desc: 'Data-driven strategies for measurable success.' }
+  ]">
+</app-carousal>
+</div>
+  </section>
+</div>

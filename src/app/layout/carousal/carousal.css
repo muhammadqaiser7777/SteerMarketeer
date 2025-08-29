@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #000;
+  --text: #fff;
+  --muted: #9fa4a8;
+  --accent: #c4ef17;
+  --card: #181818;
+  --rule: #2a2a2a;
+}
+
+/* Section shell */
+.advertiser-process {
+  background: transparent;
+  padding: 3rem 1rem;
+  font-family: 'Outfit', sans-serif;
+  color: var(--text);
+}
+
+/* Title */
+.advertiser-section-title {
+  font-family: 'Marcellus', serif;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  margin: 0 0 2rem 0;
+  color: var(--accent);
+}
+
+/* Keep carousel inside its container width */
+.advertiser-carousel-section,
+.advertiser-swiper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+  padding: 0 0 40px 0;
+}
+
+.advertiser-swiper {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+/* Slides */
+.swiper-wrapper {
+  align-items: stretch;
+  overflow: visible;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex: 1 0 auto;
+  height: auto;
+}
+
+/* Card */
+.advertiser-card {
+  position: relative;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  overflow: hidden;
+  width: 100%;
+  max-width: 340px;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
+}
+
+.advertiser-card:hover {
+  transform: translateY(-6px);
+}
+
+.advertiser-card img {
+  position: absolute;   /* ✅ sits behind overlay */
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Overlay */
+.advertiser-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* ✅ ensures overlay is above image */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.6rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  background: linear-gradient(
+    to top,
+    var(--accent) 0%,
+    rgba(196,239,23,0.92) 30%,
+    rgba(196,239,23,0) 80%
+  );
+  padding: 2rem 1rem 2.2rem;
+  border-radius: 16px;
+}
+
+.advertiser-card:hover .advertiser-card-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.advertiser-card-overlay h3 {
+  font-family: 'Marcellus', serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #111;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.advertiser-card-overlay p {
+  font-size: 0.95rem;
+  color: #111;
+  margin: 0.25rem 0 0.9rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Overlay actions */
+.advertiser-card-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.advertiser-card-actions a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.advertiser-card-actions a:hover {
+  transform: scale(1.07);
+  background: #fffffe;
+}
+
+.advertiser-card-actions a svg {
+  width: 20px;
+  height: 20px;
+  fill: #111;
+}
+
+/* Swiper controls */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important;
+  background: transparent !important;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  transition: transform 0.2s ease;
+  opacity: 0.98;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffffff !important;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .advertiser-card {
+    width: 92%;
+    max-width: 340px;
+    height: 340px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Pagination fix */
+::ng-deep .advertiser-swiper .swiper-pagination {
+  bottom: 10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+::ng-deep .advertiser-swiper .swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border-radius: 50% !important;
+  opacity: 1 !important;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+::ng-deep .advertiser-swiper .swiper-pagination-bullet-active {
+  background-color: #c4ef17 !important;
+  transform: scale(1.3) !important;
+}

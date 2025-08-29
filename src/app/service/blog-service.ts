@@ -116,15 +116,12 @@ export class BlogService {
         </div>
 
         <h3>High EPC vs. High Payout – Which One Wins?</h3>
-        <table>
+        <table class="blog-table">
           <tr><th>Factor</th><th>High EPC</th><th>High Payout</th></tr>
           <tr><td>Conversion Rate</td><td>✅ High</td><td>❌ Low</td></tr>
           <tr><td>Stability</td><td>✅ Reliable</td><td>❌ Fluctuates</td></tr>
           <tr><td>Profitability</td><td>✅ Consistent</td><td>❌ Risky</td></tr>
         </table>
-        <div class="step-image">
-          <img src="assets/images/blogs/blog-3.3.jpg" alt="EPC vs Payout Comparison" />
-        </div>
 
         <h3>Final Thoughts</h3>
         <p>High EPC usually means better conversions and long-term success...</p>

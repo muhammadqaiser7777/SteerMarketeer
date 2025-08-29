@@ -1,11 +1,64 @@
-h1, h2, h3, h4, h5, h6, button, a {
-    font-family:"Marcellus";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* Prevent horizontal scroll globally */
+.container {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
+/* ✅ Keep headings/buttons default to Outfit (lighter global font) */
+h1, h2, h3, h4, h5, h6, button, a {
+  font-family: "Outfit", sans-serif;
+}
+
+/* Blog detail images */
 .full-content img {
   max-width: 400px;
   display: block;
   margin: 20px auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Blog detail table (Dark Theme) */
+.blog-detail .blog-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  border: 1px solid #2b2f36;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #111418; /* table background */
+}
+.blog-detail .blog-table th {
+  background: #1a1e23;
+  color: #f5f5f5;
+  font-weight: 600;
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #2b2f36;
+}
+.blog-detail .blog-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #2b2f36;
+  color: #d1d5db;
+  font-size: 0.95rem; /* ✅ consistent size */
+}
+.blog-detail .blog-table tr:nth-child(even) td {
+  background: #15191e;
+}
+.blog-detail .blog-table tr:hover td {
+  background: #1f242a;
+  transition: background 0.2s ease;
+}
+.blog-detail .blog-table td:first-child {
+  font-weight: 600;
+  color: #f5f5f5;
 }
