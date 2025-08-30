@@ -111,30 +111,51 @@
 }
 
 /* ---- Signup Buttons ---- */
-.signup-buttons {
-  margin-top: calc(4rem * var(--scale));
-  display: flex;
-  justify-content: center;
-  gap: calc(1.5rem * var(--scale));
-  flex-wrap: wrap;
+.signup-button a {
+  text-decoration: none;
+  color: black;
 }
 
 .signup-button {
-  padding: calc(1rem * var(--scale)) calc(2.4rem * var(--scale));
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: calc(1rem * var(--scale));
+  background: #fff;
+  color: #111;
+  border-radius: 50%;
+  width: 190px;
+  height: 190px;
+  font-size: 2rem;
+  font-weight: 700;
+  border: none;
   text-decoration: none;
-  transition: all 0.3s ease;
-  border-radius: 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .signup-button:hover {
-  background: var(--bg);
-  color: var(--text);
-  border-color: var(--text);
+  background: #c4ef17;
+  color: #111;
+  transform: scale(1.08);
+}
+
+/* wrapper fix */
+.signup-buttons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px; /* space between buttons */
+  margin-top: 20px;
+}
+
+/* Mobile (e.g., under 768px width) */
+@media (max-width: 768px) {
+  .signup-buttons-wrapper {
+    flex-direction: column;
+    gap: 20px; /* smaller gap when stacked */
+  }
 }
 
 /* ---- Responsive ---- */

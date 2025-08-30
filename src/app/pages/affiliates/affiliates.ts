@@ -1,85 +1,109 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
-import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { CommonModule } from '@angular/common';
+import { Carousal } from '../../layout/carousal/carousal';
 
 @Component({
   selector: 'app-affiliates',
   standalone: true,
   templateUrl: './affiliates.html',
   styleUrls: ['./affiliates.css'],
-  imports: [CommonModule]
+  imports: [CommonModule, Carousal]
 })
 export class Affiliates implements AfterViewInit, OnDestroy {
-  swiper?: Swiper;
-
-  cards = [
-    {
-      img: 'assets/images/affiliates/real-time-tracking.jpg',
-      title: 'Real-Time Tracking',
-      desc: 'Monitor your performance and earnings with our advanced real-time tracking tools.'
-    },
-    {
-      img: 'assets/images/affiliates/high-payouts.jpg',
-      title: 'High Payouts',
-      desc: 'Enjoy industry-leading commissions and timely payments for your efforts.'
-    },
-    {
-      img: 'assets/images/affiliates/variety-offers.jpg',
-      title: 'Variety of Offers',
-      desc: 'Promote top converting offers across multiple verticals and geos.'
-    },
-    {
-      img: 'assets/images/affiliates/dedicated-support.jpg',
-      title: 'Dedicated Support',
-      desc: 'Get personalized assistance from our experienced affiliate managers.'
-    },
-    {
-      img: 'assets/images/affiliates/fast-payments.jpg',
-      title: 'Fast Payments',
-      desc: 'Receive your earnings quickly and securely with multiple payment options.'
-    },
-    {
-      img: 'assets/images/affiliates/advanced-tools.jpg',
-      title: 'Advanced Tools',
-      desc: 'Access a suite of tools to optimize your campaigns and maximize ROI.'
-    }
-  ];
-
   ngAfterViewInit(): void {
-    this.initCarousel();
+    this.initScrollReveal();
+    this.initCounters();
+    this.initBackToTop();
   }
 
-  ngOnDestroy(): void {
-    if (this.swiper) {
-      this.swiper.destroy(true, true);
-    }
+  ngOnDestroy(): void {}
+
+  // ✅ Scroll Reveal
+  initScrollReveal() {
+    const reveals = document.querySelectorAll<HTMLElement>('.reveal');
+
+    const revealOnScroll = () => {
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (elementTop < windowHeight - revealPoint) {
+          el.classList.add('active');   // show
+        } else {
+          el.classList.remove('active'); // hide again if needed
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll, { passive: true });
+    revealOnScroll();
   }
 
-  initCarousel() {
-    this.swiper = new Swiper('.process-swiper', {
-      modules: [Navigation, Pagination, Autoplay],
-      loop: true,
-      slidesPerView: 3,
-      spaceBetween: 16,
-      speed: 700,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      breakpoints: {
-        0: { slidesPerView: 1 },
-        600: { slidesPerView: 2 },
-        900: { slidesPerView: 3 }
+  // ✅ Counter Animation
+  initCounters() {
+    const counters = document.querySelectorAll<HTMLElement>('.affiliate-stat-number');
+
+    const runCounter = (counter: HTMLElement) => {
+      counter.innerText = '0';
+      const targetAttr = counter.getAttribute('data-target');
+      if (!targetAttr) return;
+
+      const target = +targetAttr;
+      const increment = Math.max(1, Math.floor(target / 100));
+
+      const update = () => {
+        const current = +counter.innerText.replace(/,/g, '');
+        if (current < target) {
+          const next = Math.min(target, current + increment);
+          counter.innerText = next.toLocaleString();
+          setTimeout(update, 15);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      };
+
+      update();
+    };
+
+    const handleScroll = () => {
+      counters.forEach(counter => {
+        const rect = counter.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (
+          rect.top < windowHeight &&
+          rect.bottom > 0 &&
+          !counter.classList.contains('counted')
+        ) {
+          counter.classList.add('counted');
+          runCounter(counter);
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
+
+  // ✅ Back to Top
+  initBackToTop() {
+    const backToTopBtn = document.querySelector<HTMLElement>('.advertiser-back-to-top');
+    if (!backToTopBtn) return;
+
+    const onScroll = () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');   // toggle class instead of inline style
+      } else {
+        backToTopBtn.classList.remove('visible');
       }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 }
