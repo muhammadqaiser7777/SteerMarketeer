@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=marcellus:wght@300;400;500;600&display=swap');
 
 :root {
   --bg: #000;
@@ -13,7 +13,7 @@
 .advertiser-process {
   background: transparent;
   padding: 3rem 1rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'marcellus', sans-serif;
   color: var(--text);
 }
 

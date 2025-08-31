@@ -1,70 +1,203 @@
+<!-- Progress Bar -->
+<div class="progress-wrap">
+  <div #scrollProgress id="scroll-progress" class="progress-bar"></div>
+</div>
+
 <!-- Hero Section -->
-<section class="bg-white text-center py-5">
-  <div class="container">
-    <h1 class="fw-bold display-4" style="color: var(--heading-color);">Steer Ahead with Performance Marketing</h1>
-    <p class="lead">Connecting advertisers and affiliates with high-quality leads and scalable results.</p>
-    <a routerLink="/about" class="btn btn-primary btn-lg mt-3">Learn More</a>
+<section class="hero hero-bg-home">
+  <div class="hero-overlay"></div>
+  <div class="hero-inner reveal" data-delay="0">
+    <h1>Performance Marketing That Delivers Results</h1>
+    <p>
+      SteerMarketeer LLC is both an Affiliate Marketing Agency & Direct Advertiser in the Home Improvement and Solar verticals.
+      We generate high-quality, TCPA-compliant leads through our own landing pages and connect affiliates & advertisers
+      with scalable growth opportunities.
+    </p>
+    <div class="hero-cta">
+      <div class="abc">
+      <a href="/advertisers" class="special" aria-label="Start advertising with SteerMarketeer">For Advertisers</a>
+      <a href="/affiliates" class="special" aria-label="Join SteerMarketeer as an Affiliate">For Affiliates</a>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- Client Marquee -->
+<section class="marquee reveal" data-delay="100">
+  <div class="track">
+    <!-- Original items -->
+    <span>Affiliate Network</span>
+    <span>Direct Advertiser</span>
+    <span>Global Reach</span>
+    <span>Trusted Partner</span>
+    <span>Performance Driven</span>
+    <span>Verified Leads</span>
+    <span>NET 30 Payments</span>
+    <span>24/7 Support</span>
 
-<!-- About Section -->
-<section id="about" class="py-5">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <h2>About Us</h2>
-        <p>
-          At Steer Marketeer, we specialize in connecting brands with the right
-          audience using cutting-edge digital strategies.
-        </p>
-        <a href="#contact" class="btn btn-outline-primary">Learn More</a>
-      </div>
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="About">
-      </div>
-    </div>
+    <!-- Duplicate items for continuous loop -->
+    <span>Affiliate Network</span>
+    <span>Direct Advertiser</span>
+    <span>Global Reach</span>
+    <span>Trusted Partner</span>
+    <span>Performance Driven</span>
+    <span>Verified Leads</span>
+    <span>NET 30 Payments</span>
+    <span>24/7 Support</span>
   </div>
 </section>
 
 <!-- Services Section -->
-<section id="services" class="bg-light py-5">
-  <div class="container text-center">
-    <h2 class="mb-4">Our Services</h2>
-    <div class="row">
-      <div class="col-md-4 mb-3">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Affiliate Marketing</h5>
-            <p class="card-text">Expand your reach through targeted affiliates.</p>
-          </div>
-        </div>
+<section id="services" class="section">
+  <div class="section-head reveal" data-delay="0">
+    <h2 class="eyebrow">What We Offer</h2>
+    <h3 class="title">Affiliate-Friendly. Advertiser-Ready.</h3>
+    <p class="sub">
+      We provide a transparent CPL model with exclusive, high-converting landing pages designed to generate quality leads in Solar and Home Improvement niches.
+    </p>
+  </div>
+
+  <div class="cards">
+    <article class="card reveal" data-delay="0">
+      <img src="assets/images/home/home-2.png" alt="For Affiliates" loading="lazy" />
+      <h4>For Affiliates</h4>
+      <p>
+        Promote our exclusive in-house offers, drive targeted traffic, and earn commissions on every verified lead.
+        Enjoy real-time tracking and on-time payments.
+      </p>
+      <a class="link" href="/affiliates" aria-label="Join SteerMarketeer as an Affiliate">Join Affiliates →</a>
+    </article>
+
+    <article class="card reveal" data-delay="100">
+      <img src="assets/images/home/home-3.png" alt="For Advertisers" loading="lazy" />
+      <h4>For Advertisers</h4>
+      <p>
+        Get TCPA-compliant, intent-driven leads tailored to your business.
+        Pay only for results with our reliable CPL model and competitive payouts.
+      </p>
+      <a class="link" href="/advertisers" aria-label="Start advertising with SteerMarketeer">Start Advertising →</a>
+    </article>
+
+    <article class="card reveal" data-delay="200">
+      <img src="assets/images/home/home-4.png" alt="Our Technology" loading="lazy" />
+      <h4>Our Technology</h4>
+      <p>
+        Our proprietary landing pages, fraud prevention systems, and real-time reporting ensure transparency,
+        compliance, and scalable growth for all partners.
+      </p>
+      <a class="link" href="/about" aria-label="Learn more about our technology">Learn more →</a>
+    </article>
+  </div>
+</section>
+
+<!-- Why SteerMarketeer Section -->
+<section id="why" class="section split">
+  <div class="split-media reveal" data-delay="0">
+    <img src="assets/images/home/home-5.png" alt="Why Steer Marketeer" loading="lazy" />
+  </div>
+  <div class="split-copy reveal" data-delay="100">
+    <h2 class="eyebrow">Why Choose Us</h2>
+    <h3 class="title">The Partner You Can Rely On</h3>
+    <ul class="bullets">
+      <li>Exclusive, high-converting offers in Home Improvement & Solar.</li>
+      <li>Only verified, TCPA-compliant leads delivered.</li>
+      <li>Transparent NET 30 payment terms with on-time payouts.</li>
+      <li>Real-time tracking and campaign visibility.</li>
+      <li>Dedicated affiliate managers to guide your success.</li>
+    </ul>
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-num">1M+</span>
+        <span class="stat-label">Leads Generated</span>
       </div>
-      <div class="col-md-4 mb-3">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Lead Generation</h5>
-            <p class="card-text">We provide high-quality leads tailored to your business.</p>
-          </div>
-        </div>
+      <div class="stat">
+        <span class="stat-num">1,000+</span>
+        <span class="stat-label">Active Affiliates</span>
       </div>
-      <div class="col-md-4 mb-3">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Campaign Management</h5>
-            <p class="card-text">End-to-end digital campaign planning & execution.</p>
-          </div>
-        </div>
+      <div class="stat">
+        <span class="stat-num">24/7</span>
+        <span class="stat-label">Support Available</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Contact CTA Section -->
-<section id="contact" class="py-5 text-center">
-  <div class="container">
-    <h2>Ready to Grow?</h2>
-    <p class="lead">Let’s discuss how we can boost your business today.</p>
-    <a href="/contact" class="btn btn-primary btn-lg">Contact Us</a>
+<!-- Process Section -->
+<section class="section">
+  <div class="section-head reveal" data-delay="0">
+    <h2 class="eyebrow">How It Works</h2>
+    <h3 class="title">Simple. Transparent. Scalable.</h3>
+  </div>
+
+  <div class="steps">
+    <div class="step reveal" data-delay="0">
+      <div class="badge">01</div>
+      <h4>Traffic In</h4>
+      <p>Affiliates drive traffic from email, native, display, social, and SEO channels to our optimized landing pages.</p>
+    </div>
+    <div class="step reveal" data-delay="100">
+      <div class="badge">02</div>
+      <h4>Lead Captured</h4>
+      <p>Users request services in niches like roofing, windows, painting, HVAC, and solar energy solutions.</p>
+    </div>
+    <div class="step reveal" data-delay="200">
+      <div class="badge">03</div>
+      <h4>Lead Sold</h4>
+      <p>We validate every lead for compliance and deliver it to advertisers, ensuring ROI and quality growth.</p>
+    </div>
   </div>
 </section>
+
+<!-- Testimonials Section -->
+<section class="section alt">
+  <div class="section-head reveal" data-delay="0">
+    <h2 class="eyebrow">Our Community</h2>
+    <h3 class="title">What Partners Say</h3>
+  </div>
+
+  <div class="testimonials">
+    <figure class="t-card reveal" data-delay="0">
+      <blockquote>
+        “SteerMarketeer’s exclusive offers in Solar & Home Improvement convert better than anything I’ve promoted. Payments are always on time.”
+      </blockquote>
+      <figcaption><strong>John D.</strong> <span>Affiliate Marketer</span></figcaption>
+    </figure>
+
+    <figure class="t-card reveal" data-delay="100">
+      <blockquote>
+        “The leads we buy are high-quality and TCPA-compliant. They consistently generate real customers for our business.”
+      </blockquote>
+      <figcaption><strong>Sarah K.</strong> <span>Advertiser</span></figcaption>
+    </figure>
+
+    <figure class="t-card reveal" data-delay="200">
+      <blockquote>
+        “Joining SteerMarketeer as an affiliate was the best decision. Real-time tracking and great support helped me scale quickly.”
+      </blockquote>
+      <figcaption><strong>Michael T.</strong> <span>Affiliate Partner</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta reveal" data-delay="0">
+  <h3>Ready to partner with SteerMarketeer LLC?</h3>
+  <div class="abc"><a href="/contact" class="special" aria-label="Get Started with SteerMarketeer">Get Started</a></div>
+</section>
+
+<!-- Carousel Section -->
+<div class="carousal">
+  <app-carousal 
+    [cards]="[
+      { img: 'assets/images/advertisers/advertiser-1.jpg', title: 'Exclusive Offers', desc: 'Promote our direct Solar & Home Improvement campaigns with top payouts.' },
+      { img: 'assets/images/advertisers/advertiser-2.jpg', title: 'Compliance & Quality', desc: 'All leads are TCPA compliant and validated before delivery.' },
+      { img: 'assets/images/advertisers/advertiser-3.jpg', title: 'Real-Time Tracking', desc: 'Monitor every click, lead, and earning through advanced reporting.' },
+      { img: 'assets/images/advertisers/advertiser-4.jpg', title: 'Dedicated Managers', desc: 'Our affiliate managers provide guidance and support 24/7.' },
+      { img: 'assets/images/advertisers/advertiser-5.jpg', title: 'Scalable Growth', desc: 'From small-scale trials to high volume, we help you scale with confidence.' },
+      { img: 'assets/images/advertisers/advertiser-6.jpg', title: 'Timely Payments', desc: 'Reliable NET 30 payouts ensure smooth cashflow for partners.' }
+    ]">
+  </app-carousal>
+</div>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" [class.show]="showBackToTop" (click)="scrollToTop()" aria-label="Back to top">↑</button>

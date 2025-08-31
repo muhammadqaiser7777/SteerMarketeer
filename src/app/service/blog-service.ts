@@ -268,6 +268,142 @@ export class BlogService {
         <p>Scaling requires balance between growth and profitability...</p>
       `,
       image: 'assets/images/blogs/blog-6.jpg'
+    },
+
+    // ---------------- New Blogs (7–12) ----------------
+    {
+      id: 7,
+      title: 'Why CPL (Cost-Per-Lead) Works Best for Home Improvement & Solar',
+      date: 'February 10, 2025',
+      snippet: 'CPL campaigns are one of the most reliable models for industries like home improvement and solar energy...',
+      content: `
+        <h3>1. Predictable ROI with CPL</h3>
+        <p>In CPL campaigns, advertisers pay only when a valid lead is generated...</p>
+        <div class="step-image"><img src="assets/images/blogs/blog-1.1.jpg" alt="CPL ROI" /></div>
+
+        <h3>2. Why Home Improvement & Solar Fit CPL</h3>
+        <ul>
+          <li>🏡 <b>High Ticket Items:</b> Big projects justify lead-based campaigns.</li>
+          <li>☀️ <b>Targeted Audiences:</b> Consumers actively searching for solar/home solutions.</li>
+          <li>📊 <b>Scalable Model:</b> Predictable and performance-driven.</li>
+        </ul>
+        <div class="step-image"><img src="assets/images/blogs/blog-1.2.jpg" alt="Home Improvement CPL" /></div>
+
+        <h3>Final Thoughts</h3>
+        <p>CPL ensures advertisers spend wisely while affiliates earn consistently...</p>
+      `,
+      image: 'assets/images/blogs/blog-1.jpg'
+    },
+    {
+      id: 8,
+      title: 'Understanding TCPA Compliance in Lead Generation',
+      date: 'February 15, 2025',
+      snippet: 'Compliance with TCPA is crucial in lead generation to avoid legal risks and ensure consumer trust...',
+      content: `
+        <h3>1. What is TCPA?</h3>
+        <p>The Telephone Consumer Protection Act regulates how businesses can contact leads...</p>
+        <div class="step-image"><img src="assets/images/blogs/blog-2.1.jpg" alt="TCPA Rules" /></div>
+
+        <h3>2. Key Requirements for Affiliates</h3>
+        <ul>
+          <li>✅ Clear opt-in consent.</li>
+          <li>✅ No auto-dialing without permission.</li>
+          <li>✅ Respect “Do Not Call” lists.</li>
+        </ul>
+        <div class="step-image"><img src="assets/images/blogs/blog-2.2.jpg" alt="TCPA Compliance" /></div>
+
+        <h3>Final Thoughts</h3>
+        <p>Strong TCPA compliance builds trust and protects both advertisers and affiliates...</p>
+      `,
+      image: 'assets/images/blogs/blog-2.jpg'
+    },
+    {
+      id: 9,
+      title: 'The Importance of NET 30 Payments in Affiliate Marketing',
+      date: 'February 20, 2025',
+      snippet: 'Reliable payment terms like NET 30 create trust and long-term partnerships in affiliate marketing...',
+      content: `
+        <h3>1. What Does NET 30 Mean?</h3>
+        <p>NET 30 means affiliates are paid 30 days after invoice, ensuring stable cash flow...</p>
+        <div class="step-image"><img src="assets/images/blogs/blog-3.1.jpg" alt="NET30 Explained" /></div>
+
+        <h3>2. Why Affiliates Value NET 30</h3>
+        <ul>
+          <li>💵 Predictable income stream.</li>
+          <li>🤝 Builds trust with networks.</li>
+          <li>📈 Encourages scaling campaigns.</li>
+        </ul>
+        <div class="step-image"><img src="assets/images/blogs/blog-3.2.jpg" alt="Affiliate Payments" /></div>
+
+        <h3>Final Thoughts</h3>
+        <p>Timely payments are the backbone of strong affiliate relationships...</p>
+      `,
+      image: 'assets/images/blogs/blog-3.jpg'
+    },
+    {
+      id: 10,
+      title: 'Direct Offers vs Brokered Offers – Why Advertisers Prefer Exclusive Networks',
+      date: 'February 25, 2025',
+      snippet: 'Direct offers provide advertisers with more control and transparency compared to brokered deals...',
+      content: `
+        <h3>1. What Are Direct Offers?</h3>
+        <p>Direct offers come straight from advertisers, ensuring authenticity...</p>
+        <div class="step-image"><img src="assets/images/blogs/blog-4.1.jpg" alt="Direct Offers" /></div>
+
+        <h3>2. Risks of Brokered Offers</h3>
+        <p>Brokered offers often involve multiple layers, reducing transparency and margins...</p>
+        <div class="step-image"><img src="assets/images/blogs/blog-4.2.jpg" alt="Brokered Offers" /></div>
+
+        <h3>Final Thoughts</h3>
+        <p>Advertisers prefer exclusive networks because they deliver higher-quality traffic and better ROI...</p>
+      `,
+      image: 'assets/images/blogs/blog-4.jpg'
+    },
+    {
+      id: 11,
+      title: 'How Real-Time Tracking Helps Affiliates Optimize Faster',
+      date: 'March 1, 2025',
+      snippet: 'Real-time tracking is a game-changer for affiliates looking to optimize campaigns effectively...',
+      content: `
+        <h3>1. Why Real-Time Data Matters</h3>
+        <p>Instant insights allow quick adjustments to traffic sources and creatives...</p>
+        <div class="step-image"><img src="assets/images/blogs/blog-5.1.jpg" alt="Tracking Data" /></div>
+
+        <h3>2. Benefits of Real-Time Tracking</h3>
+        <ul>
+          <li>⚡ Faster optimization.</li>
+          <li>📊 Better budget allocation.</li>
+          <li>🚀 Increased conversions.</li>
+        </ul>
+        <div class="step-image"><img src="assets/images/blogs/blog-5.2.jpg" alt="Real-Time Optimization" /></div>
+
+        <h3>Final Thoughts</h3>
+        <p>Real-time tracking empowers affiliates to make data-driven decisions quickly...</p>
+      `,
+      image: 'assets/images/blogs/blog-5.jpg'
+    },
+    {
+      id: 12,
+      title: 'Affiliate Success Stories: Scaling with SteerMarketeer',
+      date: 'March 3, 2025',
+      snippet: 'See how affiliates scaled their campaigns with SteerMarketeer’s exclusive offers and support...',
+      content: `
+        <h3>1. From Small Budgets to Big Profits</h3>
+        <p>Affiliates who started small scaled campaigns to 6-figure revenues...</p>
+        <div class="step-image"><img src="assets/images/blogs/blog-6.1.jpg" alt="Scaling Success" /></div>
+
+        <h3>2. The Role of Network Support</h3>
+        <p>SteerMarketeer’s dedicated support team helped affiliates optimize campaigns...</p>
+        <div class="step-image"><img src="assets/images/blogs/blog-6.2.jpg" alt="Affiliate Support" /></div>
+
+        <h3>3. Exclusive Direct Offers</h3>
+        <p>Direct advertiser relationships ensured higher EPCs and consistent payouts...</p>
+        <div class="step-image"><img src="assets/images/blogs/blog-6.3.jpg" alt="Exclusive Offers" /></div>
+
+        <h3>Final Thoughts</h3>
+        <p>With the right support and offers, affiliates can scale to new heights...</p>
+      `,
+      image: 'assets/images/blogs/blog-6.jpg'
     }
   ];
 

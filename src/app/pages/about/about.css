@@ -1,5 +1,5 @@
 /* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=marcellus:wght@300;400;500;600&display=swap');
 
 /* ---- Base ---- */
 .about-page {
@@ -11,7 +11,7 @@
   --rule: #2a2a2a;              /* divider line */
   background: var(--bg);
   color: var(--text);
-  font-family: 'Outfit', sans-serif;
+  font-family: 'marcellus', sans-serif;
   width: 100%;
   max-width: 100%;
   margin: 0;
