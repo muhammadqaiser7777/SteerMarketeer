@@ -1,4 +1,4 @@
-import { Component, HostListener, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, HostListener, ElementRef, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Carousal } from '../../layout/carousal/carousal';
 
@@ -7,7 +7,8 @@ import { Carousal } from '../../layout/carousal/carousal';
   standalone: true,
   imports: [CommonModule, Carousal],
   templateUrl: './home.html',
-  styleUrls: ['./home.css']
+  styleUrls: ['./home.css'],
+  encapsulation: ViewEncapsulation.None, 
 })
 export class Home implements AfterViewInit {
   showBackToTop = false;
@@ -27,31 +28,47 @@ export class Home implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // Scroll reveal for elements
-    const revealElements = document.querySelectorAll<HTMLElement>('.reveal, app-carousal');
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const el = entry.target as HTMLElement;
-            const delay = el.dataset['delay']
-              ? parseInt(el.dataset['delay']!, 10)
-              : el.tagName === 'APP-CAROUSAL'
-              ? 300
-              : 0;
+  this.initBackToTop();
 
-            setTimeout(() => el.classList.add('in-view'), delay);
-            obs.unobserve(el);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    revealElements.forEach(el => observer.observe(el));
+  // Force carousel to be visible immediately
+  const carousel = document.querySelector<HTMLElement>('app-carousal');
+  if (carousel) {
+    carousel.style.opacity = '1';
+    carousel.style.transform = 'none';
   }
 
-  scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Reveal logic for other elements
+  const revealElements = document.querySelectorAll<HTMLElement>('.reveal');
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const delay = el.dataset['delay'] ? parseInt(el.dataset['delay']!, 10) : 0;
+          setTimeout(() => el.classList.add('in-view'), delay);
+          obs.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  revealElements.forEach(el => observer.observe(el));
+}
+
+
+  initBackToTop() {
+    const backToTopBtn = document.querySelector<HTMLElement>('.back-to-top');
+    if (!backToTopBtn) return;
+
+    const onScroll = () => {
+      backToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 }

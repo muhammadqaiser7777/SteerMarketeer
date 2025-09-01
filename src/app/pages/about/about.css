@@ -359,3 +359,27 @@
     font-size: 0.8rem;
   }
 }
+
+
+.about-page .about-back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background: #ffffff;
+  color: #000;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+.about-page .about-back-to-top:hover {
+  background: #c4ef17;
+  transform: translateY(-3px);
+}

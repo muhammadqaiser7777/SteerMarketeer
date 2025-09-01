@@ -382,26 +382,29 @@ p {
 }
 
 /* ---- Back to Top ---- */
-.back-to-top {
+.home-page .back-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--accent);
-  border: none;
-  color: var(--bg);
-  font-size: 1.2rem;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background: #ffffff;
+  color: #000;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: var(--transition);
+  font-size: 1.4rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
 }
 
-.back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
+
+.home-page .back-to-top:hover {
+  background: #c4ef17;
+  transform: translateY(-3px);
 }
 
 /* ---- Animations ---- */
@@ -467,4 +470,72 @@ p {
   color: #000;                               /* black text or change to #fff if readable */
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(196, 239, 23, 0.6);
+}
+
+@media (max-width: 600px) {
+  .special {
+    width: 130px;
+    height: 130px;
+    font-size: 1.5rem;
+    margin: 0 10px;
+  }
+}
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .marquee .track {
+    animation: scroll-left 12s linear infinite; /* faster */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .marquee .track {
+    animation: scroll-left 8s linear infinite; /* even faster */
+  }
+}
+
+/* Force hover overlay inside app-carousal */
+::ng-deep app-carousal .advertiser-card {
+  position: relative !important;
+  background: var(--card) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  max-width: 340px !important;
+  height: 440px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: transform 0.25s ease !important;
+}
+
+::ng-deep app-carousal .advertiser-card:hover {
+  transform: translateY(-6px) !important;
+}
+
+::ng-deep app-carousal .advertiser-card-overlay {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  padding: 2rem 1rem 2.2rem !important;
+  border-radius: 16px !important;
+  background: linear-gradient(
+    to top,
+    var(--accent) 0%,
+    rgba(196,239,23,0.92) 30%,
+    rgba(196,239,23,0) 80%
+  ) !important;
+}
+
+::ng-deep app-carousal .advertiser-card:hover .advertiser-card-overlay {
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }

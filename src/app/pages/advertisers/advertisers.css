@@ -185,7 +185,10 @@
   color: #111;
   transform: scale(1.08);
 }
-
+.advertiser-about ul{
+  text-decoration: none;
+  list-style: none;
+}
 /* Back to Top Button */
 .advertiser-page .advertiser-back-to-top {
   position: fixed;
@@ -193,7 +196,7 @@
   right: 30px;
   width: 45px;
   height: 45px;
-  background: #aae730;
+  background: #ffffff;
   color: #000;
   border-radius: 50%;
   display: none;
@@ -206,6 +209,6 @@
   z-index: 1000;
 }
 .advertiser-page .advertiser-back-to-top:hover {
-  background: #7ec900;
+  background: #c4ef17;
   transform: translateY(-3px);
 }

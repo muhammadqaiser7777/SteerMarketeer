@@ -88,14 +88,14 @@ export class Affiliates implements AfterViewInit, OnDestroy {
 
   // ✅ Back to Top
   initBackToTop() {
-    const backToTopBtn = document.querySelector<HTMLElement>('.advertiser-back-to-top');
+    const backToTopBtn = document.querySelector<HTMLElement>('.affiliate-back-to-top');
     if (!backToTopBtn) return;
 
     const onScroll = () => {
       if (window.scrollY > 300) {
-        backToTopBtn.classList.add('visible');   // toggle class instead of inline style
+        backToTopBtn.style.display = 'flex';
       } else {
-        backToTopBtn.classList.remove('visible');
+        backToTopBtn.style.display = 'none';
       }
     };
 

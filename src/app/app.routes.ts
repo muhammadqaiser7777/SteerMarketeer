@@ -14,7 +14,8 @@ export const routes: Routes = [
   { path: 'about', component: About },
   { path: 'affiliates', component: Affiliates },
   { path: 'advertisers', component: Advertisers },
-  { path: 'blog', component: BlogComponent },
+  { path: 'blog', component: BlogComponent },                  // blog list
+  { path: 'blog/:slug', component: BlogComponent },           // individual blog
   { path: 'faq', component: Faq },
   { path: 'contact', component: Contact },
   { path: 'privacy-policy', component: PrivacyPolicy },

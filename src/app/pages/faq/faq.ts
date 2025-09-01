@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, NgZone } from '@angular/core';
+import { CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-faq',
@@ -101,15 +101,23 @@ faqs = [
   }
 ];
 
+showBackToTop = false;
 
-toggleFAQ(index: number) {
-  this.faqs.forEach((f, i) => {
-    if (i === index) {
-      f.open = !f.open;   // toggle selected
-    } else {
-      f.open = false;     // close others
-    }
-  });
-}
+  constructor(private zone: NgZone) {}
 
+  ngOnInit() {
+    window.addEventListener('scroll', () => {
+      this.zone.run(() => {
+        this.showBackToTop = window.scrollY > 300;
+      });
+    }, { passive: true });
+  }
+
+  toggleFAQ(index: number) {
+    this.faqs.forEach((f, i) => f.open = i === index ? !f.open : false);
+  }
+
+  backToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

@@ -12,9 +12,10 @@ export class About {
   yearsExperience = 15;
   publishers = 5000;
   advertisers = 1000;
-  conversionRate = 21;
+  conversionRate = 5;
   guaranteed = 100;
 
+  ngAfterViewInit(): void {this.initBackToTop();}
   // Counter animation
   counter(start: number, end: number, duration: number, callback: (val: number) => void) {
     let startTimestamp: number | null = null;
@@ -33,5 +34,26 @@ export class About {
     this.counter(0, this.advertisers, 2000, val => this.advertisers = val);
     this.counter(0, this.conversionRate, 2000, val => this.conversionRate = val);
     this.counter(0, this.guaranteed, 2000, val => this.guaranteed = val);
+  }
+
+    // ✅ Back to Top
+  initBackToTop() {
+    const backToTopBtn = document.querySelector<HTMLElement>('.about-back-to-top');
+    if (!backToTopBtn) return;
+
+    const onScroll = () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 }

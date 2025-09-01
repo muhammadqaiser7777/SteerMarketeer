@@ -195,7 +195,7 @@
   right: 30px;
   width: 45px;
   height: 45px;
-  background: #aae730;
+  background: #ffffff;
   color: #000;
   border-radius: 50%;
   display: none;
@@ -208,7 +208,7 @@
   z-index: 1000;
 }
 .affiliate-page .affiliate-back-to-top:hover {
-  background: #7ec900;
+  background: #c4ef17;
   transform: translateY(-3px);
 }
 
